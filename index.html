@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INGENIEROS NEZTRAN S.A.S. - Energía confiable, soluciones seguras</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         :root {
             --azul: #0057A3;
@@ -92,7 +91,7 @@
         
         .portada {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagenes/portada.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -281,104 +280,75 @@
         
         .contact-container {
             display: flex;
+            justify-content: center;
             gap: 40px;
         }
         
         .contact-info {
             flex: 1;
-        }
-        
-        .contact-form {
-            flex: 1;
+            max-width: 600px;
         }
         
         .contact-item {
             display: flex;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: var(--blanco);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(10px);
         }
         
         .contact-icon {
-            font-size: 1.5rem;
+            font-size: 2rem;
             color: var(--azul);
-            margin-right: 15px;
-            width: 30px;
+            margin-right: 25px;
+            width: 50px;
             text-align: center;
         }
         
-        .form-group {
-            margin-bottom: 20px;
+        .contact-details h4 {
+            color: var(--azul);
+            margin-bottom: 8px;
+            font-size: 1.3rem;
         }
         
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
+        .contact-details p {
+            color: var(--gris-oscuro);
+            font-size: 1.2rem;
+            margin-bottom: 5px;
         }
         
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-        
-        .qr-section {
-            background-color: var(--azul);
-            color: var(--blanco);
-            text-align: center;
-            padding: 60px 0;
-        }
-        
-        .qr-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-        
-        .qr-code {
-            background-color: var(--blanco);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-        
-        .qr-instructions {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-        
-        .qr-instructions h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-        
-        .qr-instructions p {
-            margin-bottom: 10px;
+        .whatsapp-link {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 8px;
+            transition: color 0.3s;
             font-size: 1.1rem;
         }
         
-        .qr-steps {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 30px;
-            flex-wrap: wrap;
+        .whatsapp-link:hover {
+            color: #128C7E;
         }
         
-        .qr-step {
-            flex: 1;
-            min-width: 200px;
-            max-width: 250px;
-            text-align: center;
+        .email-link {
+            color: var(--azul);
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 8px;
+            transition: color 0.3s;
+            font-size: 1.1rem;
         }
         
-        .qr-step-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+        .email-link:hover {
             color: var(--naranja);
         }
         
@@ -601,11 +571,6 @@
                 gap: 30px;
             }
             
-            .qr-steps {
-                flex-direction: column;
-                align-items: center;
-            }
-            
             .gallery-grid {
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
@@ -628,7 +593,6 @@
                     <li><a href="#nosotros">Quiénes Somos</a></li>
                     <li><a href="#servicios">Servicios</a></li>
                     <li><a href="#normatividad">Normatividad</a></li>
-                    <li><a href="#qr">QR Portafolio</a></li>
                     <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -659,7 +623,7 @@
                     <p>Los valores y principios que enmarcan nuestra actividad diaria se fundamentan en la confiabilidad que depositan en nosotros al poder presenciar un servicio correcto y legal en todos los ámbitos.</p>
                 </div>
                 <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80" alt="Equipo de trabajo">
+                    <img src="imagenes/equipo.jpg" alt="Equipo de trabajo de INGENIEROS NEZTRAN">
                 </div>
             </div>
         </div>
@@ -790,45 +754,6 @@
         </div>
     </section>
 
-    <section id="qr" class="qr-section">
-        <div class="container">
-            <div class="section-title">
-                <h2 style="color: var(--blanco);">Portafolio Digital</h2>
-            </div>
-            <div class="qr-container">
-                <div class="qr-code" id="qrcode"></div>
-                <div class="qr-instructions">
-                    <h3>Escanea para ver nuestro portafolio</h3>
-                    <p>Utiliza la cámara de tu teléfono para escanear este código QR y acceder directamente a nuestro portafolio de servicios.</p>
-                    <p>¡Comparte este código con tus contactos para que conozcan nuestros servicios!</p>
-                </div>
-                <div class="qr-steps">
-                    <div class="qr-step">
-                        <div class="qr-step-icon">
-                            <i class="fas fa-camera"></i>
-                        </div>
-                        <h4>Paso 1</h4>
-                        <p>Abre la aplicación de cámara en tu teléfono</p>
-                    </div>
-                    <div class="qr-step">
-                        <div class="qr-step-icon">
-                            <i class="fas fa-qrcode"></i>
-                        </div>
-                        <h4>Paso 2</h4>
-                        <p>Enfoca el código QR con tu cámara</p>
-                    </div>
-                    <div class="qr-step">
-                        <div class="qr-step-icon">
-                            <i class="fas fa-mouse-pointer"></i>
-                        </div>
-                        <h4>Paso 3</h4>
-                        <p>Toca el enlace que aparece en pantalla</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="contacto" style="background-color: var(--blanco);">
         <div class="container">
             <div class="section-title">
@@ -836,62 +761,31 @@
             </div>
             <div class="contact-container">
                 <div class="contact-info">
-                    <h3>Información de Contacto</h3>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div>
-                            <h4>Dirección</h4>
-                            <p>Colombia</p>
-                        </div>
-                    </div>
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-phone"></i>
                         </div>
-                        <div>
-                            <h4>Teléfono</h4>
-                            <p>+57 XXX XXX XXXX</p>
+                        <div class="contact-details">
+                            <h4>Teléfono / WhatsApp</h4>
+                            <p>312 300 4533</p>
+                            <a href="https://wa.me/573123004533" class="whatsapp-link" target="_blank">
+                                <i class="fab fa-whatsapp"></i> Escribir por WhatsApp
+                            </a>
                         </div>
                     </div>
+                    
                     <div class="contact-item">
                         <div class="contact-icon">
                             <i class="fas fa-envelope"></i>
                         </div>
-                        <div>
+                        <div class="contact-details">
                             <h4>Correo Electrónico</h4>
-                            <p>info@neztran.com</p>
+                            <p>neztran.gerencia@gmail.com</p>
+                            <a href="mailto:neztran.gerencia@gmail.com" class="email-link">
+                                <i class="fas fa-paper-plane"></i> Enviar correo
+                            </a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-                        <div>
-                            <h4>Horario de Atención</h4>
-                            <p>Lunes a Viernes: 8:00 am - 6:00 pm</p>
-                            <p>Sábados: 8:00 am - 1:00 pm</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <h3>Envíanos un Mensaje</h3>
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Nombre completo" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" class="form-control" placeholder="Correo electrónico" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Asunto">
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" placeholder="Mensaje" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Enviar Mensaje</button>
-                    </form>
                 </div>
             </div>
         </div>
@@ -905,6 +799,10 @@
                         <i class="fas fa-bolt"></i> INGENIEROS NEZTRAN S.A.S.
                     </div>
                     <p>Empresa colombiana dedicada al servicio eléctrico a nivel local y nacional, ofreciendo soluciones confiables y seguras.</p>
+                    <div style="margin-top: 15px;">
+                        <p><strong>Teléfono:</strong> 312 300 4533</p>
+                        <p><strong>Email:</strong> neztran.gerencia@gmail.com</p>
+                    </div>
                 </div>
                 <div class="footer-links">
                     <h4>Enlaces Rápidos</h4>
@@ -913,7 +811,6 @@
                         <li><a href="#nosotros">Quiénes Somos</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#normatividad">Normatividad</a></li>
-                        <li><a href="#qr">QR Portafolio</a></li>
                         <li><a href="#contacto">Contacto</a></li>
                     </ul>
                 </div>
@@ -924,6 +821,11 @@
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin-in"></i></a>
                         <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                    <div style="margin-top: 20px;">
+                        <a href="https://wa.me/573123004533" class="btn" style="background-color: #25D366; display: inline-flex; align-items: center; gap: 8px;">
+                            <i class="fab fa-whatsapp"></i> WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
@@ -970,22 +872,6 @@
             });
         });
         
-        // Generar código QR
-        document.addEventListener('DOMContentLoaded', function() {
-            // Obtener la URL actual de la página
-            const currentUrl = window.location.href;
-            
-            // Crear el código QR
-            const qrcode = new QRCode(document.getElementById("qrcode"), {
-                text: currentUrl,
-                width: 200,
-                height: 200,
-                colorDark: "#0057A3",
-                colorLight: "#ffffff",
-                correctLevel: QRCode.CorrectLevel.H
-            });
-        });
-        
         // Galerías de servicios
         const serviceCards = document.querySelectorAll('.service-card');
         const modal = document.getElementById('galleryModal');
@@ -993,37 +879,37 @@
         const modalTitle = document.getElementById('modalServiceTitle');
         const serviceGallery = document.getElementById('serviceGallery');
         
-        // Imágenes para cada servicio (URLs de ejemplo)
+        // Imágenes locales para cada servicio
         const serviceImages = {
             instalaciones: [
-                'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
-                'https://images.unsplash.com/photo-1621905251189-08d45b3dadd0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
-                'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80',
-                'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80'
+                'imagenes/instalaciones-1.jpg',
+                'imagenes/instalaciones-2.jpg',
+                'imagenes/instalaciones-3.jpg',
+                'imagenes/instalaciones-4.jpg'
             ],
             reparaciones: [
-                'https://images.unsplash.com/photo-1581093458791-8a6b22bb9b5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1581093458872-8c6b6b6b6b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1581093458791-8a6b22bb9b5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1581093458872-8c6b6b6b6b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+                'imagenes/reparaciones-1.jpg',
+                'imagenes/reparaciones-2.jpg',
+                'imagenes/reparaciones-3.jpg',
+                'imagenes/reparaciones-4.jpg'
             ],
             fotovoltaicos: [
-                'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
-                'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
-                'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80',
-                'https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80'
+                'imagenes/fotovoltaicos-1.jpg',
+                'imagenes/fotovoltaicos-2.jpg',
+                'imagenes/fotovoltaicos-3.jpg',
+                'imagenes/fotovoltaicos-4.jpg'
             ],
             mantenimiento: [
-                'https://images.unsplash.com/photo-1581093458791-8a6b22bb9b5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1581093458872-8c6b6b6b6b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1581093458791-8a6b22bb9b5a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1581093458872-8c6b6b6b6b6b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80'
+                'imagenes/mantenimiento-1.jpg',
+                'imagenes/mantenimiento-2.jpg',
+                'imagenes/mantenimiento-3.jpg',
+                'imagenes/mantenimiento-4.jpg'
             ],
             modernizacion: [
-                'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80',
-                'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80',
-                'https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2064&q=80',
-                'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80'
+                'imagenes/modernizacion-1.jpg',
+                'imagenes/modernizacion-2.jpg',
+                'imagenes/modernizacion-3.jpg',
+                'imagenes/modernizacion-4.jpg'
             ]
         };
         
@@ -1056,6 +942,10 @@
                 const img = document.createElement('img');
                 img.src = imageUrl;
                 img.alt = serviceTitles[serviceType];
+                img.onerror = function() {
+                    // Si la imagen no carga, mostrar una imagen por defecto
+                    this.src = 'https://via.placeholder.com/300x200/0057A3/FFFFFF?text=Imagen+No+Disponible';
+                };
                 
                 galleryItem.appendChild(img);
                 serviceGallery.appendChild(galleryItem);
