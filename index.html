@@ -109,7 +109,7 @@
         
         .portada {
             height: 100vh;
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imagenes/portada.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./imagenes/portada.jpg') no-repeat center center/cover;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -651,7 +651,7 @@
     <header>
         <div class="container nav-container">
             <div class="logo-container">
-                <img src="imagenes/logo.png" alt="Logo INGENIEROS NEZTRAN" class="logo-img">
+                <img src="./imagenes/logo.png" alt="Logo INGENIEROS NEZTRAN" class="logo-img">
                 <div class="logo-text">
                     <span class="logo-main">INGENIEROS NEZTRAN S.A.S.</span>
                     <span class="logo-sub">Energía confiable, soluciones seguras</span>
@@ -675,7 +675,7 @@
     <section class="portada" id="inicio">
         <div class="portada-content">
             <div class="portada-logo">
-                <img src="imagenes/logo.png" alt="Logo INGENIEROS NEZTRAN" class="portada-logo-img">
+                <img src="./imagenes/logo.png" alt="Logo INGENIEROS NEZTRAN" class="portada-logo-img">
                 <div class="portada-text">
                     <h1>INGENIEROS NEZTRAN S.A.S.</h1>
                     <p>Energía confiable, soluciones seguras.</p>
@@ -685,7 +685,6 @@
         </div>
     </section>
 
-    <!-- El resto del código se mantiene igual -->
     <section id="nosotros">
         <div class="container">
             <div class="section-title">
@@ -702,7 +701,7 @@
                     <p>Los valores y principios que enmarcan nuestra actividad diaria se fundamentan en la confiabilidad que depositan en nosotros al poder presenciar un servicio correcto y legal en todos los ámbitos.</p>
                 </div>
                 <div class="about-image">
-                    <img src="imagenes/equipo.jpg" alt="Equipo de trabajo de INGENIEROS NEZTRAN">
+                    <img src="./imagenes/equipo.jpg" alt="Equipo de trabajo de INGENIEROS NEZTRAN">
                 </div>
             </div>
         </div>
@@ -736,6 +735,14 @@
                     </div>
                     <h3>Sistemas Fotovoltaicos</h3>
                     <p>Estudio de dimensionamiento, diseño e instalación de sistemas fotovoltaicos autónomos y con inyección a la red para aprovechar la energía solar.</p>
+                    <div class="view-gallery">Ver Galería</div>
+                </div>
+                <div class="service-card" data-service="vehiculos-electricos">
+                    <div class="service-icon">
+                        <i class="fas fa-car-battery"></i>
+                    </div>
+                    <h3>Enchufes para Vehículos Eléctricos</h3>
+                    <p>Instalación especializada de tomacorrientes para carros y motos eléctricas. Carga segura y eficiente para la movilidad sostenible.</p>
                     <div class="view-gallery">Ver Galería</div>
                 </div>
                 <div class="service-card" data-service="mantenimiento">
@@ -875,7 +882,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <div class="footer-logo-container">
-                        <img src="imagenes/logo.png" alt="Logo INGENIEROS NEZTRAN" class="footer-logo-img">
+                        <img src="./imagenes/logo.png" alt="Logo INGENIEROS NEZTRAN" class="footer-logo-img">
                         <span class="footer-logo-text">INGENIEROS NEZTRAN S.A.S.</span>
                     </div>
                     <p>Empresa colombiana dedicada al servicio eléctrico a nivel local y nacional, ofreciendo soluciones confiables y seguras.</p>
@@ -952,44 +959,43 @@
             });
         });
         
-        // Galerías de servicios
-        const serviceCards = document.querySelectorAll('.service-card');
-        const modal = document.getElementById('galleryModal');
-        const closeModal = document.querySelector('.close-modal');
-        const modalTitle = document.getElementById('modalServiceTitle');
-        const serviceGallery = document.getElementById('serviceGallery');
-        
-        // Imágenes locales para cada servicio
+        // Galerías de servicios con rutas relativas para GitHub
         const serviceImages = {
             instalaciones: [
-                'imagenes/instalaciones-1.jpg',
-                'imagenes/instalaciones-2.jpg',
-                'imagenes/instalaciones-3.jpg',
-                'imagenes/instalaciones-4.jpg'
+                './imagenes/instalaciones-1.jpg',
+                './imagenes/instalaciones-2.jpg',
+                './imagenes/instalaciones-3.jpg',
+                './imagenes/instalaciones-4.jpg'
             ],
             reparaciones: [
-                'imagenes/reparaciones-1.jpg',
-                'imagenes/reparaciones-2.jpg',
-                'imagenes/reparaciones-3.jpg',
-                'imagenes/reparaciones-4.jpg'
+                './imagenes/reparaciones-1.jpg',
+                './imagenes/reparaciones-2.jpg',
+                './imagenes/reparaciones-3.jpg',
+                './imagenes/reparaciones-4.jpg'
             ],
             fotovoltaicos: [
-                'imagenes/fotovoltaicos-1.jpg',
-                'imagenes/fotovoltaicos-2.jpg',
-                'imagenes/fotovoltaicos-3.jpg',
-                'imagenes/fotovoltaicos-4.jpg'
+                './imagenes/fotovoltaicos-1.jpg',
+                './imagenes/fotovoltaicos-2.jpg',
+                './imagenes/fotovoltaicos-3.jpg',
+                './imagenes/fotovoltaicos-4.jpg'
+            ],
+            'vehiculos-electricos': [
+                './imagenes/vehiculos-electricos-1.jpg',
+                './imagenes/vehiculos-electricos-2.jpg',
+                './imagenes/vehiculos-electricos-3.jpg',
+                './imagenes/vehiculos-electricos-4.jpg'
             ],
             mantenimiento: [
-                'imagenes/mantenimiento-1.jpg',
-                'imagenes/mantenimiento-2.jpg',
-                'imagenes/mantenimiento-3.jpg',
-                'imagenes/mantenimiento-4.jpg'
+                './imagenes/mantenimiento-1.jpg',
+                './imagenes/mantenimiento-2.jpg',
+                './imagenes/mantenimiento-3.jpg',
+                './imagenes/mantenimiento-4.jpg'
             ],
             modernizacion: [
-                'imagenes/modernizacion-1.jpg',
-                'imagenes/modernizacion-2.jpg',
-                'imagenes/modernizacion-3.jpg',
-                'imagenes/modernizacion-4.jpg'
+                './imagenes/modernizacion-1.jpg',
+                './imagenes/modernizacion-2.jpg',
+                './imagenes/modernizacion-3.jpg',
+                './imagenes/modernizacion-4.jpg'
             ]
         };
         
@@ -998,11 +1004,18 @@
             instalaciones: 'Instalaciones Eléctricas',
             reparaciones: 'Reparaciones Eléctricas',
             fotovoltaicos: 'Sistemas Fotovoltaicos',
+            'vehiculos-electricos': 'Enchufes para Vehículos Eléctricos',
             mantenimiento: 'Mantenimiento',
             modernizacion: 'Modernización'
         };
         
         // Abrir modal al hacer clic en una tarjeta de servicio
+        const serviceCards = document.querySelectorAll('.service-card');
+        const modal = document.getElementById('galleryModal');
+        const closeModal = document.querySelector('.close-modal');
+        const modalTitle = document.getElementById('modalServiceTitle');
+        const serviceGallery = document.getElementById('serviceGallery');
+        
         serviceCards.forEach(card => {
             card.addEventListener('click', function() {
                 const serviceType = this.getAttribute('data-service');
